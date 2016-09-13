@@ -1,0 +1,1209 @@
+auth.json 參數設定說明
+{
+  "AuthConfig": {
+    "AuthType": "ptc",  //google或ptc帳號登入
+    "GoogleUsername": null, //Gmail 帳號
+    "GooglePassword": null, //Gmail 密碼
+    "PtcUsername": "Pokemon",   //Pokemon Trainer Club 帳號
+    "PtcPassword": "Pokemon"    //Pokemon Trainer Club 密碼
+  },
+  "ProxyConfig": {
+    "UseProxy": false,  //是否使用 Proxy 功能，預設為 false
+    "UseProxyHost": null,   //代理伺服器位置 (IP/Domain)
+    "UseProxyPort": null,   //代理伺服器連接埠
+    "UseProxyAuthentication": false,    //代理伺服器驗證，若有設置帳密則改為 true
+    "UseProxyUsername": null,   //代理伺服器連線帳號
+    "UseProxyPassword": null    //代理伺服器連驗密碼
+  },
+  "DeviceConfig": {
+    "DevicePackageName": "galaxy6",
+    "DeviceId": "505eb078ada0516b",
+    "AndroidBoardName": "universal7420",
+    "AndroidBootloader": "G920FXXU3DPEK",
+    "DeviceBrand": "samsung",
+    "DeviceModel": "zeroflte",
+    "DeviceModelIdentifier": "SM-G920F",
+    "DeviceModelBoot": "qcom",
+    "HardwareManufacturer": "samsung",
+    "HardwareModel": "samsungexynos7420",
+    "FirmwareBrand": "zerofltexx",
+    "FirmwareTags": "dev-keys",
+    "FirmwareType": "user",
+    "FirmwareFingerprint": "samsung/zerofltexx/zeroflte:6.0.1/MMB29K/G920FXXU3DPEK:user/release-keys"
+  }
+}
+
+
+config.json 參數設定說明
+{
+  "ConsoleConfig": {
+    "TranslationLanguageCode": "zh-TW", //填入語系代碼設定顯示語言，台灣為 zh-TW，香港為 zh-HK
+    "StartupWelcomeDelay": false, 
+    "AmountOfPokemonToDisplayOnStart": 10,  //依照 IV、CP 排行顯示寶可夢列表，預設為前10隻
+    "DetailedCountsBeforeRecycling": true   //於進行刪除物品前，詳細統計品項與數量
+  },
+  "UpdateConfig": {
+    "CheckForUpdates": true,  //檢查是否有更新版
+    "AutoUpdate": true, //自動更新至最新版
+    "TransferConfigAndAuthOnUpdate": true   //轉移 Auth、Config 參數設定至更新版本
+  },
+  "WebsocketsConfig": {
+    "UseWebsocket": false,  //於本機啟用 WebSocket 服務
+    "WebSocketPort": 14251  //WebSocket 服務連接埠
+  },
+  "LocationConfig": {
+    "DisableHumanWalking": false, //取消人類步態模擬，預設是 false
+    "StartFromLastPosition": true,  //重先前最後位置開始繼續移動
+    "DefaultLatitude": 25.069434, //預設起始緯度
+    "DefaultLongitude": 121.529963, //預設起始經度
+    "WalkingSpeedInKilometerPerHour": 4.16, //步行速度基準值(公里/小時)
+    "UseWalkingSpeedVariant": true, //步行時變速移動，預設是 true
+    "WalkingSpeedVariant": 1.2, //步行速度變動值(公里/小時)
+    "ShowVariantWalking": false,  //於畫面顯示前往下一個補給站的時速
+    "RandomlyPauseAtStops": true, //隨機在補給站做停留，預設為 true
+    "MaxSpawnLocationOffset": 10, //距離起始位置誤差值(公尺)
+    "MaxTravelDistanceInMeters": 1000 //距離起始位置最遠移動半徑距離(公尺)
+  },
+  "TelegramConfig": {
+    "UseTelegramAPI": false,  //使用 Telegram API，預設是 false
+    "TelegramAPIKey": null, //Telegram API Key
+    "TelegramPassword": "12345" //Telegram 登入密碼
+  },
+  "GPXConfig": {
+    "UseGpxPathing": false, //使用 GPS 自訂移動軌跡，預設是 false
+    "GpxFile": "GPXPath.GPX"  //GPX 自訂移動軌跡檔案名稱
+  },
+  "SnipeConfig": {
+    "UseSnipeLocationServer": false,  //使用本機端寶可夢狙擊伺服器，預設是 false
+    "SnipeLocationServer": "localhost", //本機端寶可夢狙擊伺服器位址
+    "SnipeLocationServerPort": 16969, //本機端寶可夢狙擊伺服器連接埠
+    "GetSniperInfoFromPokezz": false, //從 Pokezz 取得寶可夢狙擊位置資訊，預設是 false
+    "GetOnlyVerifiedSniperInfoFromPokezz": true,  //從 Pokezz 取得確認過的狙擊位置資訊，預設是 true
+    "GetSniperInfoFromPokeSnipers": true, //從 PokeSnipers 取得狙擊位置資訊，預設是 true
+    "GetSniperInfoFromPokeWatchers": true,  //從 PokeWatchers 取得狙擊位置資訊，預設是 true
+    "GetSniperInfoFromSkiplagged": true,  //從 Skiplagged 取得狙擊位置資訊，預設是 true
+    "MinPokeballsToSnipe": 20,  //身上寶貝球數數量大於 20 顆才會進行狙擊
+    "MinPokeballsWhileSnipe": 0,
+    "MinDelayBetweenSnipes": 60000, //狙擊間隔時間(秒)
+    "SnipingScanOffset": 0.005, //狙擊位置誤差值
+    "SnipeAtPokestops": false,  //是否於補給站所在位置進行狙擊，預設是 false
+    "SnipeIgnoreUnknownIv": false,  //是否狙擊IV不明的寶可夢，預設是 false
+    "UseTransferIvForSnipe": false,
+    "SnipePokemonNotInPokedex": false,  //是否只狙擊不在寶可夢清單的神奇寶貝，預設是 false
+    "UseSnipeLimit": true,  //是否啟用狙擊限制，預設是 true
+    "SnipeRestSeconds": 600,  //多久清除一次狙擊次數清單(秒)
+    "SnipeCountLimit": 39 //狙擊清單每次紀錄次數上限
+  },
+  "HumanWalkSnipeConfig": {
+    "DisplayPokemonList": true, //是否顯示狙擊寶可夢清單，預設是 true
+    "MaxDistance": 1500.0,  //狙擊最大傳送距離(公尺)
+    "MaxEstimateTime": 900.0, //預估狙擊移動所需耗時最長時間(秒)
+    "CatchEmAllMinBalls": 50, //所需最少寶貝球數量
+    "TryCatchEmAll": true,  //是否要全部捕捉，預設是 true
+    "CatchPokemonWhileWalking": true, //狙擊移動中是否要捕捉符合清單的寶可夢，預設是 true
+    "SpinWhileWalking": true, //移動中是否要狙擊寶可夢，預設是 true
+    "AlwaysWalkback": false,  //因為狙擊移動後，是否要走回原本位置，預設是 true
+    "SnipingScanOffset": 0.025, //狙擊位置偏差值
+    "Enable": true, //是否啟用，預設是 true
+    "WalkbackDistanceLimit": 300.0, //走回原本位置最大移動距離(公尺)
+    "IncludeDefaultLocation": true, //參照預設起始位置，預設是 true
+    "UsePokeRadar": true, //參照 PokeRadar，預設是 true (建議關閉)
+    "UseSkiplagged": true,  //參照 Skiplagged，預設是 true
+    "UseSnipePokemonList": true, //是否啟用寶可夢狙擊清單，預設是 true
+    "MaxSpeedUpSpeed": 60.0,  //發現狙擊目標移動提速上限
+    "AllowSpeedUp": true, //是否允許提速，預設是 true
+    "DelayTimeAtDestination": 10000 //抵達後狙擊下一個目標的延遲時間(毫秒)
+  },
+  "PokeStopConfig": {
+    "UsePokeStopLimit": true, //是否使用補給站翻牌限制
+    "PokeStopLimit": 1998,  //補給站翻牌限制
+    "PokeStopLimitMinutes": 1470  //每分鐘補給站翻牌限制
+  },
+  "PokemonConfig": {
+    "CatchPokemon": true, //是否要捕捉寶可夢
+    "DelayBetweenPokemonCatch": 2000, //寶可夢捕捉間隔時間(毫秒)
+    "UseCatchLimit": true,  //是否啟用寶可夢捕捉限制，預設是 true
+    "CatchPokemonLimit": 998, //寶可夢數量捕捉限制
+    "CatchPokemonLimitMinutes": 1470, //每分鐘寶可夢捕捉限制
+    "UseIncenseConstantly": false,  //是否要持續使用薰香，預設是 false
+    "UseEggIncubators": true, //是否使用孵蛋器，預設是 true
+    "UseLimitedEggIncubators": true,
+    "UseLuckyEggConstantly": false, //是否要持續使用幸運蛋，預設是 false
+    "UseLuckyEggsMinPokemonAmount": 30, //使用幸運蛋時最低寶可夢數量
+    "UseLuckyEggsWhileEvolving": false, //進化寶可夢時是否使用幸運蛋，預設是 false
+    "UseBerriesMinCp": 1000,  //Cp 大於 1000 時，對要捕捉的寶可夢捕捉漿果
+    "UseBerriesMinIv": 90.0,  //Iv 大於 90 時，對要捕捉的寶可夢捕捉漿果
+    "UseBerriesBelowCatchProbability": 0.2, //捕獲機率低於 20% 時，對要捕捉的寶可夢捕捉漿果
+    "UseBerriesOperator": "or", //餵食漿果運算子，預設符合上述條件都會進行捕捉
+    "MaxBerriesToUsePerPokemon": 1, //捕捉寶可夢最多餵食漿果數量
+    "TransferWeakPokemon": false, //是否傳送體質虛弱的寶可夢，預設是 false
+    "TransferDuplicatePokemon": true, //是否傳送重複的寶可夢，預設是 true
+    "TransferDuplicatePokemonOnCapture": true,  //是否傳送捕捉到重複的寶可夢，預設是 true
+    "RenamePokemon": false, //是否幫寶可夢更名，預設是 false
+    "RenameOnlyAboveIv": false, //只更名Iv高的寶可夢，預設是 false
+    "RenameTemplate": "{1}_{0}",  //命名規則
+    "FavoriteMinIvPercentage": 95.0,  //Iv 高於 95% 加入我的最愛
+    "AutoFavoritePokemon": false, //自動增加我的最愛寶可夢
+    "MaxPokeballsPerPokemon": 6,  //捕捉寶可夢最高使用寶貝球數
+    "UseGreatBallAboveCp": 1000,  //Cp 高於 1000 使用 Great Ball
+    "UseUltraBallAboveCp": 1250,  //Cp 高於 1250 使用 Ultra Ball
+    "UseMasterBallAboveCp": 1500, //Cp 高於 1500 使用 Master Ball
+    "UseGreatBallAboveIv": 85.0,  //Iv 高於 85% 使用 Great Ball
+    "UseUltraBallAboveIv": 95.0,  //Iv 高於 95% 使用 Ultra Ball
+    "UseGreatBallBelowCatchProbability": 0.2, //捕獲機率低於 20% 時，使用 Great Ball
+    "UseUltraBallBelowCatchProbability": 0.1, //捕獲機率低於 10% 時，使用 Ultra Ball
+    "UseMasterBallBelowCatchProbability": 0.05, //捕獲機率低於 5% 時，使用 Master Ball
+    "AutomaticallyLevelUpPokemon": false, //自動升級寶可夢，預設是 false
+    "OnlyUpgradeFavorites": true, //只升級標記我的最愛之寶可夢，預設是 true
+    "UseLevelUpList": true, //參照升級過濾清單進行升級
+    "AmountOfTimesToUpgradeLoop": 5,  //最多連續自動升級次數
+    "GetMinStarDustForLevelUp": 5000, //最低升級所需要的星砂數
+    "LevelUpByCPorIv": "iv",  //升級參照基準運算子，預設是 "iv"
+    "UpgradePokemonCpMinimum": 1000.0,  //Cp 高於 1000，才允許自動升
+    "UpgradePokemonIvMinimum": 95.0,  //Iv 高於 95%，才允許自動升級
+    "UpgradePokemonMinimumStatsOperator": "and",  //進化參照運算子，預設是 "and"
+    "EvolveAboveIvValue": 95.0, //Iv 高於 95% 自動進化
+    "EvolveAllPokemonAboveIv": false, //是否進化所有高於上述 Iv 的寶可夢，預設值是 false
+    "EvolveAllPokemonWithEnoughCandy": true,  //進化有足夠糖果的寶可夢，預設值是 true
+    "EvolveKeptPokemonsAtStorageUsagePercentage": 90.0, //當身上的寶可夢高於儲存空間 90% 時，開始進化寶可夢
+    "KeepPokemonsThatCanEvolve": false, //是否保留可以進化的寶可夢，預設為 false
+    "KeepMinCp": 1250,  //Cp 高於 1250 則保留該寶可夢
+    "KeepMinIvPercentage": 90.0,  //Iv 高於 90% 則保留該寶可夢
+    "KeepMinLvl": 6,  //Lv 高於 6 則保留該寶可夢
+    "KeepMinOperator": "or",  //保留寶可夢運算子預設為 "or"
+    "UseKeepMinLvl": false, //是否啟用保留對低等級限制，預設為 false
+    "PrioritizeIvOverCp": false,  //保留判斷運算，Iv 優先等級高於 Cp
+    "KeepMinDuplicatePokemon": 1, //保留重複的寶可夢數量上限，超過則不保留
+    "UsePokemonToNotCatchFilter": false,  //啟用 NotCatchFilter 過濾條件，預設為 false
+    "UsePokemonSniperFilterOnly": false,  //啟用 SniperFilterOnly 過濾條件，預設為 false
+    "DumpPokemonStats": false //啟用寶可夢處置狀態 Dump 功能，預設為 false
+  },
+  "RecycleConfig": {
+    "VerboseRecycling": true, //是否啟用自動資源回收功能，預設為 true
+    "RecycleInventoryAtUsagePercentage": 90.0,  //當背包空間超過 90%，啟用回收功能
+    "RandomizeRecycle": false,  //是否啟用隨機回收，預設為 false
+    "RandomRecycleValue": 5,  //每次隨機回收數量
+    "DelayBetweenRecycleActions": false,  //是否啟動回收延遲，預設為 false
+    "TotalAmountOfPokeballsToKeep": 120,  //進行回收時，至少保留 120 個寶貝球
+    "TotalAmountOfPotionsToKeep": 80, //進行回收時，至少保留 80 灌藥水
+    "TotalAmountOfRevivesToKeep": 60, //進行回收時，至少保留 60 顆復活石
+    "TotalAmountOfBerriesToKeep": 50  //進行回收時，至少保留 50 粒漿果
+  },
+  "CustomCatchConfig": {
+    "EnableHumanizedThrows": true,  //是否啟用擬人丟擲，預設是 true
+    "EnableMissedThrows": true, //是否開啟丟擲失誤，預設是 true
+    "ThrowMissPercentage": 25,  //丟擲失誤率為 25%
+    "NiceThrowChance": 40,  //丟擲表現為 Nice 的機率為 40%
+    "GreatThrowChance": 30, //丟擲表現為 Great 的機率為 30%
+    "ExcellentThrowChance": 10, //丟擲表現為 Excellent 的機率為 10%
+    "CurveThrowChance": 90, //丟擲出現為 Curve 的機率為 10%
+    "ForceGreatThrowOverIv": 90.0,  //Iv 值高於 90%，強制丟擲表現為 Great
+    "ForceExcellentThrowOverIv": 95.0,  //Iv 值高於 95%，強制丟擲表現為 Excellent
+    "ForceGreatThrowOverCp": 1000,  //Cp 值高於 1000，強制丟擲表現為 Great
+    "ForceExcellentThrowOverCp": 1500 //Cp 值高於 1500，強制丟擲表現為 Excellent
+  },
+  "PlayerConfig": {
+    "DelayBetweenPlayerActions": 5000, //動作間隔延遲(毫秒)
+    "UseNearActionRandom": true,
+    "AutoCompleteTutorial": false,
+    "DesiredNickname": null
+  },
+  "SoftBanConfig": {
+    "FastSoftBanBypass": false  //快速略過 softban，預設為 false
+  },
+  "GoogleWalkConfig": {
+    "UseGoogleWalk": true,  //是否啟用 Google Walk，預設為 true
+    "DefaultStepLength": 1.3, //預設步伐長度(公尺)
+    "GoogleHeuristic": "walking", //移動方式，預設是 "walking"
+    "GoogleAPIKey": "", //Google API Key
+    "Cache": true  //是否快取圖資，預設為 true
+  },
+  "YoursWalkConfig": {
+    "UseYoursWalk": false,  //是否啟用自訂移動方式，預設為 false
+    "YoursWalkHeuristic": "bicycle" //自訂移動方式，預設是 "bicycle"
+  },
+  "ItemRecycleFilter": [
+    {
+      "Key": "itemUnknown",
+      "Value": 0
+    },
+    {
+      "Key": "itemLuckyEgg",
+      "Value": 200
+    },
+    {
+      "Key": "itemIncenseOrdinary",
+      "Value": 100
+    },
+    {
+      "Key": "itemIncenseSpicy",
+      "Value": 100
+    },
+    {
+      "Key": "itemIncenseCool",
+      "Value": 100
+    },
+    {
+      "Key": "itemIncenseFloral",
+      "Value": 100
+    },
+    {
+      "Key": "itemTroyDisk",
+      "Value": 100
+    },
+    {
+      "Key": "itemXAttack",
+      "Value": 100
+    },
+    {
+      "Key": "itemXDefense",
+      "Value": 100
+    },
+    {
+      "Key": "itemXMiracle",
+      "Value": 100
+    },
+    {
+      "Key": "itemSpecialCamera",
+      "Value": 100
+    },
+    {
+      "Key": "itemIncubatorBasicUnlimited",
+      "Value": 100
+    },
+    {
+      "Key": "itemIncubatorBasic",
+      "Value": 100
+    },
+    {
+      "Key": "itemPokemonStorageUpgrade",
+      "Value": 100
+    },
+    {
+      "Key": "itemItemStorageUpgrade",
+      "Value": 100
+    }
+  ],
+  "PokemonsNotToTransfer": [ //不進行傳送的精靈名單
+    "venusaur",
+    "charizard",
+    "blastoise",
+    "clefable",
+    "muk",
+    "chansey",
+    "gyarados",
+    "ditto",
+    "snorlax",
+    "articuno",
+    "zapdos",
+    "moltres",
+    "dragonite",
+    "mewtwo",
+    "mew"
+  ],
+  "PokemonsToEvolve": [//要進化的精靈名單
+    "caterpie",
+    "weedle",
+    "pidgey",
+    "rattata"
+  ],
+  "PokemonsToLevelUp": [ //要升級的精靈名單
+    "venusaur",
+    "charizard",
+    "blastoise",
+    "clefable",
+    "muk",
+    "chansey",
+    "gyarados",
+    "ditto",
+    "snorlax",
+    "articuno",
+    "zapdos",
+    "moltres",
+    "dragonite",
+    "mewtwo",
+    "mew"
+  ],
+  "PokemonsToIgnore": [//不抓的精靈名單
+    "caterpie",
+    "weedle",
+    "pidgey",
+    "rattata",
+    "spearow",
+    "zubat",
+    "doduo"
+  ],
+  "PokemonsTransferFilter": { //精靈傳送過濾名單
+    "Golduck": {
+      "KeepMinCp": 1800,//達該CP值時，保留精靈
+      "KeepMinLvl": 6,//達到該等級時，保留精靈
+      "UseKeepMinLvl": false, //是否使用上述"KeepMinLvl"的設定
+      "KeepMinIvPercentage": 95.0,//達到該IV值時，保留精靈
+      "KeepMinDuplicatePokemon": 1,//重複的精靈保留數
+      "Moves": [//技能
+        [
+          "waterGunFast",
+          "hydroPump"
+        ]
+      ],
+      "DeprecatedMoves": null,//已過時技能
+      "KeepMinOperator": "or",//設定保留條件，and為同時滿足CP、IV、LV，or為滿足其中一項
+      "MovesOperator": "and"//技能保留條件
+    },
+    "Aerodactyl": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 80.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "biteFast",
+          "hyperBeam"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Venusaur": {
+      "KeepMinCp": 1800,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 95.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "vineWhipFast",
+          "solarBeam"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Farfetchd": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 80.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Krabby": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 95.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Kangaskhan": {
+      "KeepMinCp": 1500,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 60.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Horsea": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 95.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Staryu": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 95.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "MrMime": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 40.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Scyther": {
+      "KeepMinCp": 1800,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 80.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Jynx": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 95.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Charizard": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 80.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "wingAttackFast",
+          "fireBlast"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Electabuzz": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 80.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "thunderShockFast",
+          "thunder"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Magmar": {
+      "KeepMinCp": 1500,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 80.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Pinsir": {
+      "KeepMinCp": 1800,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 95.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "rockSmashFast",
+          "xScissor"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Tauros": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 90.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Magikarp": {
+      "KeepMinCp": 200,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 95.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Exeggutor": {
+      "KeepMinCp": 1800,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 90.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "zenHeadbuttFast",
+          "solarBeam"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Gyarados": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 90.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "dragonBreath",
+          "hydroPump"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Lapras": {
+      "KeepMinCp": 1800,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 80.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "frostBreathFast",
+          "blizzard"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Eevee": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 95.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Vaporeon": {
+      "KeepMinCp": 1500,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 90.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "waterGun",
+          "hydroPump"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Jolteon": {
+      "KeepMinCp": 1500,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 90.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Flareon": {
+      "KeepMinCp": 1500,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 90.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "ember",
+          "fireBlast"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Porygon": {
+      "KeepMinCp": 1250,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 60.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "or"
+    },
+    "Arcanine": {
+      "KeepMinCp": 1800,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 80.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "fireFangFast",
+          "fireBlast"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Snorlax": {
+      "KeepMinCp": 2600,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 90.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "zenHeadbuttFast",
+          "hyperBeam"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    },
+    "Dragonite": {
+      "KeepMinCp": 2600,
+      "KeepMinLvl": 6,
+      "UseKeepMinLvl": false,
+      "KeepMinIvPercentage": 90.0,
+      "KeepMinDuplicatePokemon": 1,
+      "Moves": [
+        [
+          "dragonBreath",
+          "dragonClaw"
+        ]
+      ],
+      "DeprecatedMoves": null,
+      "KeepMinOperator": "or",
+      "MovesOperator": "and"
+    }
+  },
+  "PokemonToSnipe": {//狙擊名單
+    "Locations": [/座標
+      {
+        "Latitude": 38.556807486461118,
+        "Longitude": -121.2383794784546
+      },
+      {
+        "Latitude": -33.859019,
+        "Longitude": 151.213098
+      },
+      {
+        "Latitude": 47.5014969,
+        "Longitude": -122.0959568
+      },
+      {
+        "Latitude": 51.5025343,
+        "Longitude": -0.2055027
+      }
+    ],
+    "Pokemon": [//狙擊的精靈名單
+      "venusaur",
+      "charizard",
+      "blastoise",
+      "beedrill",
+      "raichu",
+      "sandslash",
+      "nidoking",
+      "nidoqueen",
+      "clefable",
+      "ninetales",
+      "golbat",
+      "vileplume",
+      "golduck",
+      "primeape",
+      "arcanine",
+      "poliwrath",
+      "alakazam",
+      "machamp",
+      "golem",
+      "rapidash",
+      "slowbro",
+      "muk",
+      "cloyster",
+      "gengar",
+      "exeggutor",
+      "marowak",
+      "hitmonchan",
+      "lickitung",
+      "rhydon",
+      "chansey",
+      "starmie",
+      "scyther",
+      "magmar",
+      "electabuzz",
+      "jynx",
+      "gyarados",
+      "lapras",
+      "ditto",
+      "vaporeon",
+      "jolteon",
+      "flareon",
+      "porygon",
+      "kabutops",
+      "aerodactyl",
+      "snorlax",
+      "articuno",
+      "zapdos",
+      "moltres",
+      "dragonite",
+      "mewtwo",
+      "mew"
+    ]
+  },
+  "PokemonToUseMasterball": [/使用大師寶貝球(MasterBall)的名單
+    "articuno",
+    "zapdos",
+    "moltres",
+    "mew",
+    "mewtwo"
+  ],
+  "HumanWalkSnipeFilters": {//步行狙擊名單
+    "Magikarp": {
+      "MaxDistance": 300.0,//最大狙擊距離
+      "Priority": 10,//優先權
+      "MaxWalkTimes": 200.0,//最大行走時間
+      "CatchPokemonWhileWalking": true,//邊走邊抓精靈
+      "SpinPokestopWhileWalking": true,//邊走邊狙擊精靈
+      "MaxSpeedUpSpeed": 60.0,//狙擊時步行提升至該速度
+      "AllowSpeedUp": false,//允許步行狙擊時加速
+      "DelayTimeAtDestination": 0//扺達目的地後延遲狙擊(ms)
+    },
+    "Eevee": {
+      "MaxDistance": 500.0,
+      "Priority": 10,
+      "MaxWalkTimes": 200.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Electabuzz": {
+      "MaxDistance": 1500.0,
+      "Priority": 2,
+      "MaxWalkTimes": 700.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Dragonite": {
+      "MaxDistance": 3000.0,
+      "Priority": 1,
+      "MaxWalkTimes": 900.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Dragonair": {
+      "MaxDistance": 3000.0,
+      "Priority": 1,
+      "MaxWalkTimes": 900.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Dratini": {
+      "MaxDistance": 2000.0,
+      "Priority": 1,
+      "MaxWalkTimes": 900.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Charizard": {
+      "MaxDistance": 3000.0,
+      "Priority": 1,
+      "MaxWalkTimes": 900.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Snorlax": {
+      "MaxDistance": 3000.0,
+      "Priority": 1,
+      "MaxWalkTimes": 900.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Lapras": {
+      "MaxDistance": 3000.0,
+      "Priority": 1,
+      "MaxWalkTimes": 900.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Exeggutor": {
+      "MaxDistance": 1500.0,
+      "Priority": 1,
+      "MaxWalkTimes": 600.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Vaporeon": {
+      "MaxDistance": 1800.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Lickitung": {
+      "MaxDistance": 1800.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Flareon": {
+      "MaxDistance": 1800.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Scyther": {
+      "MaxDistance": 1000.0,
+      "Priority": 3,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Beedrill": {
+      "MaxDistance": 1000.0,
+      "Priority": 3,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Chansey": {
+      "MaxDistance": 1500.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Hitmonlee": {
+      "MaxDistance": 1500.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Machamp": {
+      "MaxDistance": 1500.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Ninetales": {
+      "MaxDistance": 1500.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Jolteon": {
+      "MaxDistance": 1200.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Poliwhirl": {
+      "MaxDistance": 1200.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Rapidash": {
+      "MaxDistance": 1500.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Cloyster": {
+      "MaxDistance": 1200.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Dodrio": {
+      "MaxDistance": 1200.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Clefable": {
+      "MaxDistance": 1000.0,
+      "Priority": 3,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Golbat": {
+      "MaxDistance": 200.0,
+      "Priority": 6,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Jynx": {
+      "MaxDistance": 1200.0,
+      "Priority": 4,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Rhydon": {
+      "MaxDistance": 1200.0,
+      "Priority": 4,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Kangaskhan": {
+      "MaxDistance": 800.0,
+      "Priority": 4,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Wigglytuff": {
+      "MaxDistance": 1250.0,
+      "Priority": 4,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Gyarados": {
+      "MaxDistance": 1800.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Dewgong": {
+      "MaxDistance": 1800.0,
+      "Priority": 2,
+      "MaxWalkTimes": 800.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Blastoise": {
+      "MaxDistance": 3000.0,
+      "Priority": 1,
+      "MaxWalkTimes": 900.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": true,
+      "DelayTimeAtDestination": 0
+    },
+    "Venusaur": {
+      "MaxDistance": 3000.0,
+      "Priority": 1,
+      "MaxWalkTimes": 900.0,
+      "CatchPokemonWhileWalking": false,
+      "SpinPokestopWhileWalking": false,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": true,
+      "DelayTimeAtDestination": 0
+    },
+    "Bulbasaur": {
+      "MaxDistance": 500.0,
+      "Priority": 3,
+      "MaxWalkTimes": 300.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Charmander": {
+      "MaxDistance": 500.0,
+      "Priority": 3,
+      "MaxWalkTimes": 300.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Squirtle": {
+      "MaxDistance": 500.0,
+      "Priority": 3,
+      "MaxWalkTimes": 300.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Omanyte": {
+      "MaxDistance": 1500.0,
+      "Priority": 3,
+      "MaxWalkTimes": 300.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Marowak": {
+      "MaxDistance": 1500.0,
+      "Priority": 3,
+      "MaxWalkTimes": 300.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Venomoth": {
+      "MaxDistance": 1500.0,
+      "Priority": 3,
+      "MaxWalkTimes": 300.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    },
+    "Vileplume": {
+      "MaxDistance": 1500.0,
+      "Priority": 3,
+      "MaxWalkTimes": 300.0,
+      "CatchPokemonWhileWalking": true,
+      "SpinPokestopWhileWalking": true,
+      "MaxSpeedUpSpeed": 60.0,
+      "AllowSpeedUp": false,
+      "DelayTimeAtDestination": 0
+    }
+  }
+}
+
